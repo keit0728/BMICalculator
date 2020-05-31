@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,102 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BMICalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2CH-6E-7pE">
+                                <rect key="frame" x="100" y="532" width="214" height="50"/>
+                                <color key="backgroundColor" red="0.25790698131101508" green="0.37983048754264359" blue="0.5240281946918508" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="EKi-rT-Dy4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="計算">
+                                    <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="button_tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gc4-6a-X2e"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMI Calculator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yb-cg-cr1">
+                                <rect key="frame" x="88" y="114" width="238.5" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="NkI-ru-CMV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ここに体型の判定結果が表示されます" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUL-9e-VyZ">
+                                <rect key="frame" x="77" y="484" width="260.5" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="csL-z4-Gw6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="体重をkgで入力してください" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pgI-oE-UVG">
+                                <rect key="frame" x="20" y="272" width="374" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="tVh-or-96g"/>
+                                </constraints>
+                                <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ここにBMIが表示されます" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usl-af-oca">
+                                <rect key="frame" x="105.5" y="447" width="203" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="E4f-fS-mlq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="身長をcmで入力してください" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PtW-RV-T7Y">
+                                <rect key="frame" x="20" y="230" width="374" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="kup-Lm-cIk"/>
+                                </constraints>
+                                <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2CH-6E-7pE" secondAttribute="bottom" constant="280" id="0Xi-Hu-X80"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PtW-RV-T7Y" secondAttribute="trailing" constant="20" id="1m7-BQ-fRW"/>
+                            <constraint firstItem="mUL-9e-VyZ" firstAttribute="centerX" secondItem="2CH-6E-7pE" secondAttribute="centerX" id="5aa-4s-Bve"/>
+                            <constraint firstItem="pgI-oE-UVG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="5ai-sg-NVA"/>
+                            <constraint firstItem="2CH-6E-7pE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="9a3-ne-vkT"/>
+                            <constraint firstItem="2CH-6E-7pE" firstAttribute="top" secondItem="mUL-9e-VyZ" secondAttribute="bottom" constant="30" id="DWV-52-eAL"/>
+                            <constraint firstItem="PtW-RV-T7Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="LLD-qc-pCe"/>
+                            <constraint firstItem="mUL-9e-VyZ" firstAttribute="top" secondItem="usl-af-oca" secondAttribute="bottom" constant="16" id="LpF-QI-pSz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2CH-6E-7pE" secondAttribute="trailing" constant="100" id="Sdu-NY-A7n"/>
+                            <constraint firstItem="7yb-cg-cr1" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hQd-8e-jKP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pgI-oE-UVG" secondAttribute="trailing" constant="20" id="mVV-R3-91W"/>
+                            <constraint firstItem="pgI-oE-UVG" firstAttribute="top" secondItem="PtW-RV-T7Y" secondAttribute="bottom" constant="8" id="mkW-mZ-v4S"/>
+                            <constraint firstItem="7yb-cg-cr1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="s08-uM-82d"/>
+                            <constraint firstItem="PtW-RV-T7Y" firstAttribute="top" secondItem="7yb-cg-cr1" secondAttribute="bottom" constant="95" id="xPD-Vj-n2V"/>
+                            <constraint firstItem="usl-af-oca" firstAttribute="centerX" secondItem="mUL-9e-VyZ" secondAttribute="centerX" id="zme-yv-bZk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="bmiLabel" destination="usl-af-oca" id="4mg-VO-JXn"/>
+                        <outlet property="button" destination="2CH-6E-7pE" id="AbQ-5z-iOW"/>
+                        <outlet property="heightTextfield" destination="PtW-RV-T7Y" id="Of8-25-qr9"/>
+                        <outlet property="textLabel" destination="mUL-9e-VyZ" id="qML-Kr-MyV"/>
+                        <outlet property="weightTextfield" destination="pgI-oE-UVG" id="Xlb-9A-4oJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
         </scene>
     </scenes>
 </document>
